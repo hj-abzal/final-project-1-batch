@@ -3,7 +3,7 @@ import {appReducer} from "./app-reducer";
 import thunk from 'redux-thunk'
 
 const rootReducer = combineReducers({
-    app: appReducer
+    app: appReducer,
 })
 
 declare global {
