@@ -1,62 +1,65 @@
 import {Dispatch} from "redux";
 import {authApi} from "../api/api";
+import {NavigateFunction} from "react-router/dist/lib/hooks";
 
 export type AppStateType = {
     isLoading: boolean;
-    isLogged: boolean
+    isLogged: boolean;
+    errorMessage: string;
 }
-const initState:AppStateType={
+const initState: AppStateType = {
     isLoading: false,
-    isLogged: false
-}
-export type SetIsLoadingAT = {
-    type: 'SET-IS-LOADING',
-    value: boolean
+    isLogged: false,
+    errorMessage: ''
 }
 
-type ActionTypes = SetIsLoadingType|SetIsLoadingType
+type ActionTypes =
+    | ReturnType<typeof setIsLoadingAC>
+    | ReturnType<typeof setIsLoggedAC>
+    | ReturnType<typeof setErrorMessageAC>
 
-type SetIsLoadingType = ReturnType<typeof setIsLoadingAC>
-
-export const authMeTC=()=> {
-    return (dispatch:Dispatch)=> {
-        authApi.me()
-            .then(()=>{
-                dispatch(setIsLoggedAC(true))
-            })
-            .catch(()=>{
-                dispatch(setIsLoggedAC(false))
-            })
-    }
-
-}
-export const loginTC=(email:string,password:string)=>{
-    return (dispatch:Dispatch)=>{
-        authApi.login(email,password)
-            .then((res)=>{
-                localStorage.setItem('token',res.data.token)
-                dispatch(setIsLoggedAC(true))
-            })
-            .catch(()=>{
-                dispatch(setIsLoggedAC(false))
-            })
-    }
-}
 
 export const appReducer = (state: AppStateType = initState, action: ActionTypes): AppStateType => {
     switch (action.type) {
         case "SET_IS_LOADING":
             return {...state, isLoading: action.isLoading}
+        case "SET_IS_LOGGED":
+            return {...state, isLogged: action.value}
+        case "SET_ERROR_MESSAGE":
+            return {...state, errorMessage: action.value}
         default:
             return state;
     }
 }
+
 export const setIsLoadingAC = (value: boolean) => {
-    return { type: "SET_IS_LOADING", isLoading: value}
+    return {type: "SET_IS_LOADING", isLoading: value} as const
 }
+
 export const setIsLoggedAC = (value: boolean) => {
-    return {type: 'SET-IS-LOGGED', value}
+    return {type: 'SET_IS_LOGGED', value} as const
+}
+
+export const setErrorMessageAC = (value: '') => {
+    return {type: 'SET_ERROR_MESSAGE', value} as const
 }
 
 
 
+export const registerLoginTC = (email: string, password: string, navigate: NavigateFunction) => {
+    return (dispatch: Dispatch) => {
+        dispatch(setIsLoadingAC(true))
+        authApi.create(email, password)
+            .then((res) => {
+                navigate('/login')
+            })
+            .catch((e) => {
+               if (e.response?.data?.error) {
+                   dispatch(setErrorMessageAC(e.response.data.error))
+               }
+            })
+            .finally(() => {
+                dispatch(setIsLoadingAC(false))
+            })
+    }
+}

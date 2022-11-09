@@ -1,11 +1,9 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import {appReducer} from "./app-reducer";
 import thunk from 'redux-thunk'
-import {authReducer} from "./auth-reduser";
 
 const rootReducer = combineReducers({
     app: appReducer,
-    auth:authReducer
 })
 
 declare global {
