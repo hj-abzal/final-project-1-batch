@@ -7,6 +7,8 @@ import {useSelector} from "react-redux";
 import {AppRootStateType} from "./store/store";
 import React from "react";
 import Loader from './Loader/Loader';
+import ForgotPassword from "./ForogotPassword/FogotPassword";
+
 
 
 function App() {
@@ -27,6 +29,7 @@ function App() {
                     <Route path={'/'} element={<Navigate to={'login'}/>}/>
                     <Route path={'/login'} element={<Login/>}/>
                     <Route path={'/register'} element={<Register/>}/>
+                    <Route path={'/resetPassword'} element={<ForgotPassword/>}/>
                     <Route path={'*'} element={<PageNotFound/>}/>
                 </Routes>
             </div>

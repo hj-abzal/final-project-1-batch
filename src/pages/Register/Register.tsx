@@ -10,11 +10,14 @@ import {
 import {AppRootStateType} from "../../store/store";
 import {Navigate} from "react-router-dom";
 import {Login} from "../Login/Login";
+import Loader from "../../Loader/Loader";
 
 
 export const Register = () => {
     const email = useSelector<AppRootStateType, string>(state => state.auth.email) // from redux
     const password = useSelector<AppRootStateType, string>(state => state.auth.password) // from redux
+    const isLoading = useSelector<AppRootStateType, boolean>(state => state.app.isLoading);
+    const isLogged = useSelector<AppRootStateType, boolean>(state => state.app.isLogged);
     const dispatch = useDispatch<any>();
 
     const [showPassword, setShowPassword] = useState(false)
@@ -44,6 +47,9 @@ export const Register = () => {
         dispatch(RegisterLoginTC(email, password))
     }
 
+    if(isLogged) {
+        return <Navigate to={'/login'}/>
+    }
     return (
         <div className={s.wrapper}>
             <div className={s.modal}>

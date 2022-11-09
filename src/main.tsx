@@ -7,6 +7,7 @@ import {Provider} from "react-redux";
 import {store} from "./store/store";
 import {Register} from "./pages/Register/Register";
 import {Login} from "./pages/Login/Login";
+import FogotPassword from "./ForogotPassword/FogotPassword";
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <Provider store={store}>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
                     <Route path="/" element={<App/>}/>
                     <Route path="/auth" element={<Login/>}/>
                     <Route path="/register" element={<Register/>}/>
+                    <Route path="/resetPassword" element={<FogotPassword/>}/>
                 </Routes>
         </BrowserRouter>
     </Provider>
