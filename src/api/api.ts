@@ -13,5 +13,11 @@ export const authApi = {
     },
     login: (email: string, password: string) => {
         return instance.post('auth/login', { email, password})
+    },
+    create: (email:string,password:string) => {
+        return instance.post('auth/register', { email,password})
+    },
+    update: (email:string) => {
+        return instance.put(`auth/me`, {email})
     }
 }
