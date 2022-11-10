@@ -44,8 +44,6 @@ export const setErrorMessageAC = (value: '') => {
     return {type: 'SET_ERROR_MESSAGE', value} as const
 }
 
-
-
 export const registerLoginTC = (email: string, password: string, navigate: NavigateFunction) => {
     return (dispatch: Dispatch) => {
         dispatch(setIsLoadingAC(true))

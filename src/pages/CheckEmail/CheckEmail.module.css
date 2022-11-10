@@ -1,0 +1,82 @@
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #E6D4DE 0%, #9890C7 100%);
+}
+
+.modal {
+    width: 413px;
+    height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-direction: column;
+    background: #F9F9FE;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 26px;
+    margin-top: 0px;
+    line-height: 39px
+}
+
+.p {
+    width: 328px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'SF UI Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #2D2E46;
+    opacity: 0.7;
+}
+
+.item {
+    width: 138px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style:inherit;
+    outline: none;
+    border: none;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    color: #2D2E46;
+
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("fonts/Poppins-Regular.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF UI Display';
+    src: url("fonts/ofont.ru_SF UI Display.ttf");
+}
