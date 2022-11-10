@@ -2,7 +2,7 @@ import s from './Login.module.css';
 import React, {ChangeEvent, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../store/store";
-import {NavLink, useNavigate} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {LoginTC, setErrorMessageAC} from "../../store/app-reducer";
 
 export const Login = () => {
@@ -59,18 +59,23 @@ export const Login = () => {
                 value={password}
                 placeholder={"Password"}
             />
-            <span onClick={handleClickShowPassword}>{showPassword ? 'скрыть' : 'показать'}</span>
+            <span onClick={handleClickShowPassword}>{showPassword ? '⚫' : '⚪'}</span>
 
             <div className={s.errorMessage}>
                 {errorMessage && <div>{errorMessage}</div>}
             </div>
-            <div>
+            <div className={s.buttonBox}>
                 {isLoading
                     ? <div>...loading </div>
                     : <button className={s.button} onClick={onClickLogin}>LOGIN</button>
                 }
             </div>
 
+            <div className={`${s.try} ${s.active}`}>
+                <NavLink to="/reset-password" className={navData => navData.isActive ? s.active : s.item}>
+                    Reset password
+                </NavLink>
+            </div>
             <div className={`${s.try} ${s.active}`}>
                     <NavLink to="/register" className={navData => navData.isActive ? s.active : s.try}>Sign-up</NavLink>
                 </div>

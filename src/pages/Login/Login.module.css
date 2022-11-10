@@ -14,8 +14,8 @@
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
-    display: flex;
-    margin:20px;
+    display: block;
+    margin: 20px;
     padding: 10px;
     align-items: center;
     justify-content: center;
@@ -34,6 +34,11 @@
     justify-content: center;
 }
 
+.buttonBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .button {
     display: flex;
@@ -64,8 +69,11 @@
     height: 60px;
     color: #e55555;
 }
+
 .try {
-margin-top: 25px;
+    margin-top: 15px;
     font-size: 14px;
-    color: #21268F
+    color: #21268F;
+    display: flex;
+    justify-content: center;
 }
