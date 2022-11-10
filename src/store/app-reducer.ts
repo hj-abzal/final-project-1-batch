@@ -45,6 +45,23 @@ export const setErrorMessageAC = (value: '') => {
 }
 
 
+export const LoginTC = (email: string, password: string) => {
+    return (dispatch: Dispatch) => {
+        dispatch(setIsLoadingAC(true))
+        authApi.create(email, password)
+            .then((res) => {
+            })
+            .catch((e) => {
+                if (e.response?.data?.error) {
+                    dispatch(setErrorMessageAC(e.response.data.error))
+                }
+            })
+            .finally(() => {
+                dispatch(setIsLoadingAC(false))
+            })
+    }
+}
+
 
 export const registerLoginTC = (email: string, password: string, navigate: NavigateFunction) => {
     return (dispatch: Dispatch) => {
