@@ -19,6 +19,7 @@ export const Register = () => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
 
+
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword)
     }
@@ -26,7 +27,6 @@ export const Register = () => {
     const handleClickShowConfirmPassword = () => {
         setShowConfirmPassword(!showConfirmPassword)
     }
-
 
     const onChangeEmail = (e: ChangeEvent<HTMLInputElement>) => {
         removeError();
