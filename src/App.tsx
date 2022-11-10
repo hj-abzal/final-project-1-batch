@@ -4,7 +4,8 @@ import {Login} from "./pages/Login/Login";
 import {Register} from "./pages/Register/Register";
 import {PageNotFound} from "./pages/PageNotFound/PageNotFound";
 import React from "react";
-import ForgotPassword from "./pages/ForogotPassword/FogotPassword";
+import ForgotPassword from "./pages/ForgotPassword/FogotPassword";
+import CheckEmail from "./pages/CheckEmail/CheckEmail";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                 <Route path={'/login'} element={<Login/>}/>
                 <Route path={'/register'} element={<Register/>}/>
                 <Route path={'/reset-password'} element={<ForgotPassword/>}/>
+                <Route path={'/check-email'} element={<CheckEmail/>}/>
                 <Route path={'*'} element={<PageNotFound/>}/>
             </Routes>
         </div>
