@@ -35,14 +35,10 @@
 }
 
 input {
-    width: 347px;
-    height: 48px;
-    margin: 10px;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid rebeccapurple;
-    opacity: 60%;
-    font-size: 16px;
+
+    /*outline: none;*/
+    /*border: none;*/
+
 }
 
 span {
@@ -51,6 +47,11 @@ span {
 
 .password {
     background-position: right;
+    width: 347px;
+    height: 48px;
+    border-bottom: 1px solid rebeccapurple;
+    opacity: 60%;
+    font-size: 16px;
 }
 
 .buttons {
@@ -64,6 +65,7 @@ span {
     height: 36px;
     margin: 20px;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .register {
@@ -73,11 +75,56 @@ span {
     background: #21268F;
     box-shadow: 0px 4px 18px rgba(33, 38, 143, 0.35), inset 0px 1px 0px rgba(255, 255, 255, 0.3);
     border-radius: 30px;
+    cursor: pointer;
 }
 
 .errorMessage {
     height: 50px;
-    color: red;
+    color: orange;
+    text-shadow: black;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("fonts/Poppins-Regular.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF UI Display';
+    src: url("fonts/ofont.ru_SF UI Display.ttf");
+    font-style: normal;
+}
+
+.email {
+    background-position: right;
+    width: 347px;
+    height: 48px;
+    border-bottom: 1px solid rebeccapurple;
+    opacity: 60%;
+    font-size: 16px;
+}
+.password:focus-visible, .password:active {
+   background-color: #9890C7;
+}
+.password:valid {
+    background-color: rgba(106, 174, 69, 0.12);
+    border: 1px solid green;
+    opacity: revert;
+}
+
+.password, .email:invalid {
+    background-color: rgba(136, 174, 69, 0.12);
+
+}
+.email:valid{
+    background-color: rgba(106, 174, 69, 0.12);
+    border: 1px solid green;
+    opacity: revert;
 }
 @font-face {
     font-family: 'Poppins';

@@ -19,7 +19,7 @@ const ForgotPassword = () => {
                 <h2>it-incubator </h2>
                 <h3>Forgot your password? </h3>
 
-                <input placeholder={"Email"} onChange={enterEmail}
+                <input className={s.forgotEmail} placeholder={"Email"} onChange={enterEmail}
                        value={email}/>
                 <p className={s.p}>Enter your email address and we will send you further instructions </p>
                 <button className={s.button} onClick={sendInstruction}>Send Instructions</button>
