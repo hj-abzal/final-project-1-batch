@@ -2,7 +2,7 @@ import s from './Login.module.css';
 import React, {ChangeEvent, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../store/store";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import {LoginTC, setErrorMessageAC} from "../../store/app-reducer";
 
 export const Login = () => {
@@ -10,6 +10,7 @@ export const Login = () => {
     const errorMessage = useSelector<AppRootStateType, string>(state => state.app.errorMessage);
 
     const dispatch = useDispatch<any>();
+    const navigate = useNavigate()
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -32,7 +33,7 @@ export const Login = () => {
     }
 
     const onClickLogin = () => {
-        dispatch(LoginTC(email, password))
+        dispatch(LoginTC(email, password, navigate))
     }
 
     const removeError = () => {
