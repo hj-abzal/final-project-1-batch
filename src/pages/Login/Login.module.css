@@ -62,12 +62,17 @@
     padding: 20px;
     left: 507px;
     top: 468px;
+    cursor: pointer;
 }
 
 .errorMessage {
-    margin-top: 15px;
-    height: 60px;
-    color: #e55555;
+    height: 50px;
+    color: #ff0900;
+    text-shadow: black;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .try {

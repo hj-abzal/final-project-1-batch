@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../store/store";
 import {NavLink, useNavigate} from "react-router-dom";
 import {LoginTC, setErrorMessageAC} from "../../store/app-reducer";
+import Loader from "../../components/Loader/Loader";
 
 export const Login = () => {
     const isLoading = useSelector<AppRootStateType, boolean>(state => state.app.isLoading);
@@ -69,7 +70,7 @@ export const Login = () => {
             </div>
             <div className={s.buttonBox}>
                 {isLoading
-                    ? <div>...loading </div>
+                    ? <div><Loader/></div>
                     : <button className={s.button} onClick={onClickLogin}>LOGIN</button>
                 }
             </div>

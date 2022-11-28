@@ -48,7 +48,7 @@ export const setErrorMessageAC = (value: '') => {
 export const LoginTC = (email: string, password: string, navigate: NavigateFunction) => {
     return (dispatch: Dispatch) => {
         dispatch(setIsLoadingAC(true))
-        authApi.create(email, password)
+        authApi.login(email, password)
             .then((res) => {
                 navigate('/')
             })
