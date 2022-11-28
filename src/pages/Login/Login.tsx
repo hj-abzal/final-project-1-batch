@@ -42,7 +42,9 @@ export const Login = () => {
         }
     }
 
-    return <div className={s.wrapper}>
+    const iconPath = `src/accets/icon/${showPassword ? 'eye' : 'eye-off'}.svg`
+
+   return <div className={s.wrapper}>
         <div className={s.modal}>
             <div className={s.title}>
                 <h2>IT-KARATE</h2>
@@ -60,7 +62,7 @@ export const Login = () => {
                 value={password}
                 placeholder={"Password"}
             />
-            <span onClick={handleClickShowPassword}>{showPassword ? '⚫' : '⚪'}</span>
+            <img src={iconPath} alt='eye' onClick={handleClickShowPassword} />
 
             <div className={s.errorMessage}>
                 {errorMessage && <div>{errorMessage}</div>}
