@@ -1,0 +1,27 @@
+
+.SwitcherWrapper {
+    height:35px;
+    width:196px;
+    display:flex;
+    position: center;
+    align-items:center;
+    justify-content: center;
+    margin-left: 25px;
+   }
+
+.switcher {
+    width:100px;
+    height:36px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+.switch {
+    height: 45px;
+    width: 196px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+

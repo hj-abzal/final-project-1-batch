@@ -6,6 +6,7 @@ import {PageNotFound} from "./pages/PageNotFound/PageNotFound";
 import React from "react";
 import ForgotPassword from "./pages/ForgotPassword/FogotPassword";
 import CheckEmail from "./pages/CheckEmail/CheckEmail";
+import MainPacksList from "./pages/PacksList/MainPacksList";
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     return (
         <div className="App">
             <Routes>
-                <Route path={'/'} element={<div>home</div>}/>
+                <Route path={'/main-packs-list'} element={<MainPacksList/>}/>
                 <Route path={'/login'} element={<Login/>}/>
                 <Route path={'/register'} element={<Register/>}/>
                 <Route path={'/reset-password'} element={<ForgotPassword/>}/>
