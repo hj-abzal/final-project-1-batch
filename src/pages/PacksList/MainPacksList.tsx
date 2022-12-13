@@ -26,10 +26,13 @@ const MainPacksList = () => {
                     <SwitchSelect/>
                     <p className={s.NavElements}>Number of cards</p>
                     <Slider/>
-                </nav>
-
-                <div className={s.table}>
+                </nav><div className={s.table}>
                     <p className={s.nameOfTable}>Packs list</p>
+                    <input className={s.search} type="text"/>
+                    <button className={s.addNewButton} >Add new pack</button>
+                <div>
+
+                </div>
                 </div>
             </div>
         </div>

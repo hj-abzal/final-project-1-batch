@@ -2,20 +2,20 @@ import React from 'react';
 import {useState} from "react";
 import MultiRangeSlider from "multi-range-slider-react";
 import {ChangeResult} from "multi-range-slider-react";
-import s from "./Slider.module.css"
+import   "./Slider-m.css"
 
 
 const Slider = () => {
-    const [minValue, setMinValue] = useState(0);
-    const [maxValue, setMaxValue] = useState(75);
+    const [minValue, setMinValue] = useState(4);
+    const [maxValue, setMaxValue] = useState(112);
 
     return (
         <div>
-            <div className={s.multiRangeSliderContainer}>
+            <div className='multi-range-slider-container'>
                 <MultiRangeSlider
-                    min={0}
-                    max={100}
-                    step={5}
+                    min={-20}
+                    max={160}
+                    step={6}
                     minValue={minValue}
                     maxValue={maxValue}
                     onInput={(e: ChangeResult) => {
@@ -24,7 +24,7 @@ const Slider = () => {
                     }}
                     label={false}
                     ruler={false}
-                    style={{border: "none",boxShadow: "none",padding:"15px 10px",color:'#21268F'}}
+                    style={{border: "none",boxShadow: "none",padding:"40px 10px",color:'#21268F'}}
                     barLeftColor="#9A91C8"
                     barInnerColor="#21268F "
                     barRightColor="#9A91C8"
