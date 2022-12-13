@@ -126,3 +126,13 @@ span {
     border: 1px solid green;
     opacity: revert;
 }
+@font-face {
+    font-family: 'Poppins';
+    src: url("fonts/Poppins-Regular.ttf");
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF UI Display';
+    src: url("fonts/ofont.ru_SF UI Display.ttf");
+    font-style: normal;
+}

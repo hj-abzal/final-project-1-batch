@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useState} from 'react';
+    import React, {ChangeEvent, useState} from 'react';
 import s from "./ForotPassword.module.css";
 import {NavLink} from "react-router-dom";
 

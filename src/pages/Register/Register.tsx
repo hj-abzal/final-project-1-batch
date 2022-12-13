@@ -23,6 +23,7 @@ export const Register = () => {
 
     const maxLength = 10;
 
+
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword)
     }
