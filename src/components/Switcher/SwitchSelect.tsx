@@ -6,7 +6,7 @@ export const SwitchSelect = () => {
 
     const options = [
         {
-            label: <span className={s.switcher}> My </span>,
+            label: <span className={s.switcher}> My</span>,
             value: {
                 foo: true
             },
@@ -15,7 +15,8 @@ export const SwitchSelect = () => {
         {
             label: <span className={s.switcher}>All </span>,
             value: "bar",
-            selectedBackgroundColor: " #9A91C8"
+
+            selectedBackgroundColor: " #9A91C8",
         }
     ];
 
@@ -33,7 +34,7 @@ export const SwitchSelect = () => {
                             options={options}
                             initialSelectedIndex={initialSelectedIndex}
                             backgroundColor={"#FFFFFF"}
-                            fontColor={"#2D2E46"}
+                            fontColor={"green"}
             />
         </div>
     );

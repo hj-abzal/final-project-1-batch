@@ -1,12 +1,10 @@
 import React from 'react';
 import s from './MainPackList.module.css'
-import {SwitchSelect} from "./SwitchSelect";
-import MultiRangeSlider from "../../components/Slider/Slider";
+import {SwitchSelect} from "../../components/Switcher/SwitchSelect";
 import Slider from "../../components/Slider/Slider";
 
 
 const MainPacksList = () => {
-
     return (
         <div className={s.wrapper}>
             <div className={s.header}>
