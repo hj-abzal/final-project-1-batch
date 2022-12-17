@@ -17,7 +17,6 @@ export type PackListType= {
 }
 
 function App() {
-    // const packList = useSelector<AppRootStateType,PackListStateType>(state => state.packsList);
     return (
         <div className="App">
             <Routes>
