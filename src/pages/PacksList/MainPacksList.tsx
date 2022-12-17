@@ -15,6 +15,15 @@ const MainPacksList = () => {
         },
         []
     )
+
+    const columns = [
+        {title: "Name", key: 'name', id :1,},
+        {title: "Cards", key: 'cardsCount'},
+        {title: "Name", key: 'name'},
+        {title: "Cards", key: 'cardsCount'},
+        {title: "Cards", key: 'cardsCount'},
+    ]
+
     return (
         <div className={s.wrapper}>
             <div className={s.header}>
@@ -37,10 +46,36 @@ const MainPacksList = () => {
                 </nav>
                 <div className={s.table}>
                     <p className={s.nameOfTable}>Packs list</p>
-                    <input className={s.search} type="text"/>
+                    <input className={s.search} type="text" placeholder={'Search..'}/>
                     <button className={s.addNewButton}>Add new pack</button>
                     <div>
+                        <table className={s.table2}>
+                            <tbody className={s.tbody}>
+                            <thead>
+                            <tr className={s.trSpec}>
+                                {columns.map((c) => {
+                                    return <th key={c.key} className={s.thSpec}>{c.title}</th>
+                                })}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {packslist.cardPacks.map((pack) => {
+                                return   <tr className={s.tr}>
+                                    <th className={s.th}>{pack.name}</th>
+                                    <th className={s.th}>{pack.cardsCount}</th>
+                                    <th className={s.th}>{pack.user_name}</th>
+                                    <th className={s.th}>Ivan Ivanov</th>
+                                    <th className={s.th}>
+                                        <button>delete</button>
+                                        <button>edit</button>
+                                        <button>learn</button>
+                                    </th>
+                                </tr>
+                            })}
+                            </tbody>
 
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
