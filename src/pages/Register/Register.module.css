@@ -36,8 +36,6 @@
 
 input {
 
-    /*outline: none;*/
-    /*border: none;*/
 
 }
 
@@ -49,6 +47,8 @@ span {
     background-position: right;
     width: 347px;
     height: 48px;
+    outline: none;
+    border: none;
     border-bottom: 1px solid rebeccapurple;
     opacity: 60%;
     font-size: 16px;
@@ -104,6 +104,8 @@ span {
     background-position: right;
     width: 347px;
     height: 48px;
+    outline: none;
+    border: none;
     border-bottom: 1px solid rebeccapurple;
     opacity: 60%;
     font-size: 16px;

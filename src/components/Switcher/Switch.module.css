@@ -1,0 +1,33 @@
+
+.SwitcherWrapper {
+    height:40px;
+    width:196px;
+    display:flex;
+    position: center;
+    align-items:center;
+    justify-content: center;
+    margin-left: 25px;
+    /*color: #F9F9FE;*/
+    border-radius: 2px;
+}
+
+.switcher {
+    width:100px;
+    height:36px;
+    display:flex;
+
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    border-radius: 2px;
+}
+.switch {
+    height: 45px;
+    width: 196px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 2px;
+}
+

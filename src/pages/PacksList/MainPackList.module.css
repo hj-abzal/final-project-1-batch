@@ -1,0 +1,163 @@
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+    background: linear-gradient(180deg, #E6D4DE 0%, #9890C7 100%);
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items:stretch;
+    justify-content:start;
+    flex-direction: row;
+    background: #EBE0E9;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-size: 24px;
+}
+.name {
+    margin-left: 300px;
+}
+.nameOfTable {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    margin-left: 40px;
+    color: #2D2E46;
+}
+
+.signs1 {
+    width: 120px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: row;
+    font-family: 'SF UI Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    right: 30%;
+    margin-left: 124px;
+    background: #DCCCDB;
+    border-bottom: solid #21268F;
+}
+
+.signs2 {
+    width: 170px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-family: 'SF UI Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    right: 30%;
+    opacity: 40%
+}
+
+.image {
+
+}
+
+.modal {
+    display: grid;
+    width: 1008px;
+    height: 636px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    background: #FEFEFF;
+    border-radius: 8px;
+    font-size: 22px;
+    margin: 20px;
+    grid-template-areas:"nav b";
+    grid-template-rows:1fr;
+    grid-template-columns: 243px 2fr;
+}
+
+.nav {
+    width: 100%;
+    height: 100%;
+    display:block;
+    grid-area: nav;
+    background: #ECECF9;
+}
+.NavElements {
+    display: flex;
+    height: 40px;
+    width: 196px;
+    align-items: center;
+    font-family: 'SF UI Display';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    margin-left:24px;
+    margin-top: 24px;
+}
+
+.table {
+    width: 100%;
+    height: 100%;
+    grid-area: b;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+
+}
+.search {
+    width: 451px;
+    height: 36px;
+    margin-left:40px;
+    background: #ECECF9;
+    opacity: 0.5;
+    border: 1px solid #635D80;
+    border-radius: 2px;
+}
+.addNewButton {
+    width: 184px;
+    height: 40px;
+    background: #21268F;
+    box-shadow: 0px 4px 18px rgba(33, 38, 143, 0.35), inset 0px 1px 0px rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    margin-left: 24px;
+    font-family: 'SF UI Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    color: #ECECF9;
+    text-align: center;
+    letter-spacing: 0.04em;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url("fonts/Poppins-Regular.ttf");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF UI Display';
+    src: url("fonts/ofont.ru_SF UI Display.ttf");
+    font-style: normal;
+}
+
+
+
