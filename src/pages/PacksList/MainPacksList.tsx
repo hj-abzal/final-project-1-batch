@@ -7,11 +7,11 @@ import {useDispatch} from "react-redux";
 
 
 const MainPacksList = () => {
-    const dispatch=useDispatch<any>()
+    const dispatch = useDispatch<any>()
 
-    useEffect(()=>{
+    useEffect(() => {
             dispatch(getPackListTC())
-    },
+        },
         []
     )
 
@@ -34,13 +34,52 @@ const MainPacksList = () => {
                     <SwitchSelect/>
                     <p className={s.NavElements}>Number of cards</p>
                     <Slider/>
-                </nav><div className={s.table}>
+                </nav>
+                <div className={s.table}>
                     <p className={s.nameOfTable}>Packs list</p>
-                    <input className={s.search} type="text"/>
-                    <button className={s.addNewButton} >Add new pack</button>
-                <div>
-
-                </div>
+                    <input className={s.search} type="text" placeholder={'Search..'}/>
+                    <button className={s.addNewButton}>Add new pack</button>
+                    <div>
+                        <table className={s.table2}>
+                            <tbody className={s.tbody}>
+                                    <tr className={s.trSpec}>
+                                        <th className={s.thSpec}>Name</th>
+                                        <th className={s.thSpec}>Cards</th>
+                                        <th className={s.thSpec}>Last Updated</th>
+                                        <th className={s.thSpec}>Created by</th>
+                                        <th className={s.thSpec}>Actions</th>
+                                    </tr>
+                                    <tr className={s.tr}>
+                                        <th className={s.th}>Pack Name</th>
+                                        <th className={s.th}>4</th>
+                                        <th className={s.th}>18.03.2021</th>
+                                        <th className={s.th}>Ivan Ivanov</th>
+                                        <th className={s.th}><button>delete</button><button>edit</button><button>learn</button></th>
+                                    </tr>
+                                    <tr className={s.tr}>
+                                        <th className={s.th}>Name Pack</th>
+                                        <th className={s.th}>37</th>
+                                        <th className={s.th}>19.03.2021</th>
+                                        <th className={s.th}>Petr Petrov</th>
+                                        <th className={s.th}><button>learn</button></th>
+                                    </tr>
+                                    <tr className={s.tr}>
+                                        <th className={s.th}>Pack Name</th>
+                                        <th className={s.th}>18</th>
+                                        <th className={s.th}>19.03.2021</th>
+                                        <th className={s.th}>Ivan Petrov</th>
+                                        <th className={s.th}><button>learn</button></th>
+                                    </tr>
+                                    <tr className={s.tr}>
+                                        <th className={s.th}>Name Pack</th>
+                                        <th className={s.th}>0</th>
+                                        <th className={s.th}>20.03.2021</th>
+                                        <th className={s.th}>Petr Ivanov</th>
+                                        <th className={s.th}><button>learn</button></th>
+                                    </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
