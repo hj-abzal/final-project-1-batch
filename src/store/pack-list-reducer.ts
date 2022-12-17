@@ -42,7 +42,16 @@ export type InitStateType = {
     searchParams: SearchParamsType
 }
 const initialState: InitStateType = {
-    packsList: {} as PackListResponseType,
+    packsList: {
+        cardPacks: [],
+        page: 1,
+        pageCount: 4,
+        cardPacksTotalCount: 0,
+        minCardsCount: 1,
+        maxCardsCount: 1,
+        token: "",
+        tokenDeathTime: 1,
+    } as PackListResponseType,
     searchParams: {
         packName: "",
         min: 0,
@@ -81,7 +90,7 @@ export const getPackListTC=()=>{
     return (dispatch:Dispatch)=>{
 
         //store get
-        packsApi.get(`packName=lessons`)
+        packsApi.get(`packName=`)
             .then((res)=>{
                 dispatch(setPacksAC(res.data))
 

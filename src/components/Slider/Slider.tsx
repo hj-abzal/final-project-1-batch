@@ -6,7 +6,7 @@ import   "./Slider-m.css"
 
 
 const Slider = () => {
-    const [minValue, setMinValue] = useState(4);
+    const [minValue, setMinValue] = useState(10);
     const [maxValue, setMaxValue] = useState(112);
 
     return (

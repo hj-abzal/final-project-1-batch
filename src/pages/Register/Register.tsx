@@ -3,7 +3,7 @@ import React, {ChangeEvent, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppRootStateType} from "../../store/store";
 import {registerLoginTC, setErrorMessageAC} from "../../store/app-reducer";
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import Loader from "../../components/Loader/Loader";
 
 
@@ -22,7 +22,6 @@ export const Register = () => {
     const [formField, setFormField] = useState(false);
 
     const maxLength = 10;
-
 
     const handleClickShowPassword = () => {
         setShowPassword(!showPassword)
@@ -99,7 +98,7 @@ export const Register = () => {
                     {errorMessage && <div>{errorMessage}</div>}
                 </div>
                 <div className={s.buttons}>
-                    <button className={s.cancel} onClick={onClickCancel}>CANCEL</button>
+                  <NavLink to={'/login'}><button className={s.cancel} onClick={onClickCancel}>CANCEL</button></NavLink>
                     {isLoading
                         ? <div><Loader></Loader> </div>
                         : <button className={s.register} type="submit"

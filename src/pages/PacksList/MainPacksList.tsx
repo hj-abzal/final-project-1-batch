@@ -12,9 +12,17 @@ const MainPacksList = () => {
     const packslist = useSelector<AppRootStateType, PackListResponseType>(state => state.packs.packsList)
     useEffect(() => {
             dispatch(getPackListTC())
-    },
+        },
         []
     )
+
+    const columns = [
+        {title: "Name", key: 'name', id :1,},
+        {title: "Cards", key: 'cardsCount'},
+        {title: "Name", key: 'name'},
+        {title: "Cards", key: 'cardsCount'},
+        {title: "Cards", key: 'cardsCount'},
+    ]
 
     return (
         <div className={s.wrapper}>
@@ -43,41 +51,29 @@ const MainPacksList = () => {
                     <div>
                         <table className={s.table2}>
                             <tbody className={s.tbody}>
-                                    <tr className={s.trSpec}>
-                                        <th className={s.thSpec}>Name</th>
-                                        <th className={s.thSpec}>Cards</th>
-                                        <th className={s.thSpec}>Last Updated</th>
-                                        <th className={s.thSpec}>Created by</th>
-                                        <th className={s.thSpec}>Actions</th>
-                                    </tr>
-                                    <tr className={s.tr}>
-                                        <th className={s.th}>Pack Name</th>
-                                        <th className={s.th}>4</th>
-                                        <th className={s.th}>18.03.2021</th>
-                                        <th className={s.th}>Ivan Ivanov</th>
-                                        <th className={s.th}><button>delete</button><button>edit</button><button>learn</button></th>
-                                    </tr>
-                                    <tr className={s.tr}>
-                                        <th className={s.th}>Name Pack</th>
-                                        <th className={s.th}>37</th>
-                                        <th className={s.th}>19.03.2021</th>
-                                        <th className={s.th}>Petr Petrov</th>
-                                        <th className={s.th}><button>learn</button></th>
-                                    </tr>
-                                    <tr className={s.tr}>
-                                        <th className={s.th}>Pack Name</th>
-                                        <th className={s.th}>18</th>
-                                        <th className={s.th}>19.03.2021</th>
-                                        <th className={s.th}>Ivan Petrov</th>
-                                        <th className={s.th}><button>learn</button></th>
-                                    </tr>
-                                    <tr className={s.tr}>
-                                        <th className={s.th}>Name Pack</th>
-                                        <th className={s.th}>0</th>
-                                        <th className={s.th}>20.03.2021</th>
-                                        <th className={s.th}>Petr Ivanov</th>
-                                        <th className={s.th}><button>learn</button></th>
-                                    </tr>
+                            <thead>
+                            <tr className={s.trSpec}>
+                                {columns.map((c) => {
+                                    return <th key={c.key} className={s.thSpec}>{c.title}</th>
+                                })}
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {packslist.cardPacks.map((pack) => {
+                                return   <tr className={s.tr}>
+                                    <th className={s.th}>{pack.name}</th>
+                                    <th className={s.th}>{pack.cardsCount}</th>
+                                    <th className={s.th}>{pack.user_name}</th>
+                                    <th className={s.th}>Ivan Ivanov</th>
+                                    <th className={s.th}>
+                                        <button>delete</button>
+                                        <button>edit</button>
+                                        <button>learn</button>
+                                    </th>
+                                </tr>
+                            })}
+                            </tbody>
+
                             </tbody>
                         </table>
                     </div>
