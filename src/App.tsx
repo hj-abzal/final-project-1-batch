@@ -1,5 +1,5 @@
 import './App.css'
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import {Login} from "./pages/Login/Login";
 import {Register} from "./pages/Register/Register";
 import {PageNotFound} from "./pages/PageNotFound/PageNotFound";
@@ -7,10 +7,17 @@ import React from "react";
 import ForgotPassword from "./pages/ForgotPassword/FogotPassword";
 import CheckEmail from "./pages/CheckEmail/CheckEmail";
 import MainPacksList from "./pages/PacksList/MainPacksList";
+import {AppRootStateType} from "./store/store";
+import {useSelector} from "react-redux";
 
+export type PackListType= {
+    id: string
+    title: string
+
+}
 
 function App() {
-
+    // const packList = useSelector<AppRootStateType,PackListStateType>(state => state.packsList);
     return (
         <div className="App">
             <Routes>
@@ -20,6 +27,7 @@ function App() {
                 <Route path={'/reset-password'} element={<ForgotPassword/>}/>
                 <Route path={'/check-email'} element={<CheckEmail/>}/>
                 <Route path={'*'} element={<PageNotFound/>}/>
+                <Route path={'/'} element={<Navigate to={'/main-packs-list'}/>}/>
             </Routes>
         </div>
     )

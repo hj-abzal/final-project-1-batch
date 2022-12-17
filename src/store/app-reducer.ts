@@ -82,11 +82,3 @@ export const registerLoginTC = (email: string, password: string, navigate: Navig
             })
     }
 }
-export const getPackListTC=()=>{
-    return (dispatch:Dispatch)=>{
-       packsApi.get()
-           .then((res)=>{
-               console.log(res)
-           })
-    }
-}

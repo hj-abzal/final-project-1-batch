@@ -1,9 +1,11 @@
 import {applyMiddleware, combineReducers, compose, createStore} from "redux";
 import {appReducer} from "./app-reducer";
 import thunk from 'redux-thunk'
+import {packListReducer} from "./pack-list-reducer";
 
 const rootReducer = combineReducers({
     app: appReducer,
+    packs: packListReducer,
 })
 
 declare global {
