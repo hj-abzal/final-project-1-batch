@@ -2,16 +2,17 @@ import React, {useEffect} from 'react';
 import s from './MainPackList.module.css'
 import {SwitchSelect} from "../../components/Switcher/SwitchSelect";
 import Slider from "../../components/Slider/Slider";
-import {getPackListTC} from "../../store/app-reducer";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {getPackListTC, PackListResponseType} from "../../store/pack-list-reducer";
+import {AppRootStateType} from "../../store/store";
 
 
 const MainPacksList = () => {
     const dispatch = useDispatch<any>()
-
+    const packslist = useSelector<AppRootStateType, PackListResponseType>(state => state.packs.packsList)
     useEffect(() => {
             dispatch(getPackListTC())
-        },
+    },
         []
     )
 

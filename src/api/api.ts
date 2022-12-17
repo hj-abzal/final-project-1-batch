@@ -6,7 +6,6 @@ const instance = axios.create({
     baseURL: 'https://cards-nya-back-production.up.railway.app/2.0',
     headers: {
         withCredentials: true,
-        Authorization: `Bearer ${token}`
     }
 });
 
@@ -25,8 +24,13 @@ export const authApi = {
     }
 }
 export const packsApi = {
-    get: () => {
-        return instance.get('cards/pack?token=e04fb420-7ae6-11ed-b20e-1deb1e1768f4')
+    get: (searchUrl:string) => {
+        const token: any = localStorage.getItem('token')
+        return instance.get(`cards/pack?token=${token}&${searchUrl}`)
+            .then((res) => {
+            localStorage.setItem('token', res.data.token)
+            return res;
+        })
     },
 
 }
