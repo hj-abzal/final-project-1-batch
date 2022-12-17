@@ -13,8 +13,8 @@ export const Login = () => {
     const dispatch = useDispatch<any>();
     const navigate = useNavigate()
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('jgorelova@mail.ru');
+    const [password, setPassword] = useState('1qazxcvBG');
     const [showPassword, setShowPassword] = useState(false)
 
 
@@ -51,7 +51,7 @@ export const Login = () => {
                 <h2>IT-KARATE</h2>
                 <h3>sign-in</h3>
             </div>
-            <input
+            <input  className={s.email}
                 placeholder={"Email"}
                 onChange={onChangeEmail}
                 value={email}

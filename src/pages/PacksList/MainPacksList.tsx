@@ -1,10 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './MainPackList.module.css'
 import {SwitchSelect} from "../../components/Switcher/SwitchSelect";
 import Slider from "../../components/Slider/Slider";
+import {getPackListTC} from "../../store/app-reducer";
+import {useDispatch} from "react-redux";
 
 
 const MainPacksList = () => {
+    const dispatch=useDispatch<any>()
+
+    useEffect(()=>{
+            dispatch(getPackListTC())
+    },
+        []
+    )
+
     return (
         <div className={s.wrapper}>
             <div className={s.header}>

@@ -1,5 +1,5 @@
 import {Dispatch} from "redux";
-import {authApi} from "../api/api";
+import {authApi, packsApi} from "../api/api";
 import {NavigateFunction} from "react-router/dist/lib/hooks";
 
 export type AppStateType = {
@@ -50,6 +50,7 @@ export const LoginTC = (email: string, password: string, navigate: NavigateFunct
         dispatch(setIsLoadingAC(true))
         authApi.login(email, password)
             .then((res) => {
+                localStorage.setItem('token',res.data.token)
                 navigate('/')
             })
             .catch((e) => {
@@ -79,5 +80,13 @@ export const registerLoginTC = (email: string, password: string, navigate: Navig
             .finally(() => {
                 dispatch(setIsLoadingAC(false))
             })
+    }
+}
+export const getPackListTC=()=>{
+    return (dispatch:Dispatch)=>{
+       packsApi.get()
+           .then((res)=>{
+               console.log(res)
+           })
     }
 }
